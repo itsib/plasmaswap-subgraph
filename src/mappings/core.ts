@@ -25,13 +25,15 @@ import {
   createLiquiditySnapshot
 } from './helpers'
 
+let EXCLUDED_ADDRESS = '0xdd28c66668bde04bcc1f1f208b08b483639eb5d0'
+
 function isCompleteMint(mintId: string): boolean {
   return MintEvent.load(mintId).sender !== null // sufficient checks
 }
 
 export function handleTransfer(event: Transfer): void {
   // ignore initial transfers for first adds
-  if (event.params.to.toHexString() == ADDRESS_ZERO && event.params.value.equals(BigInt.fromI32(1000))) {
+  if (event.params.to.toHexString() == ADDRESS_ZERO && event.params.value.equals(BigInt.fromI32(1000)) || event.params.to.toHexString() == EXCLUDED_ADDRESS) {
     return
   }
 

@@ -4,9 +4,9 @@ import { BigDecimal, Address, BigInt } from '@graphprotocol/graph-ts/index'
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from './helpers'
 
 const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
-const USDC_WETH_PAIR = '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc' // created 10008355
-const DAI_WETH_PAIR = '0xa478c2975ab1ea89e8196811f51a7b7ade33eb11' // created block 10042267
-const USDT_WETH_PAIR = '0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852' // created block 10093341
+const USDC_WETH_PAIR = '0x443270fd0765c7a4bc86fcb1c8b5c5d84be66057' // created 11938534
+const DAI_WETH_PAIR = '0x0786f748b7d50983d4eddaae2e7bf6f03b794c79' // created block 11938498
+const USDT_WETH_PAIR = '0x8d5ebb25d3af8d6df174cf48bf5b1fe8288318ae' // created block 11763701
 
 export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
@@ -55,14 +55,15 @@ let WHITELIST: string[] = [
   '0x960b236a07cf122663c4303350609a66a7b288c0', // ANT
   '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f', // SNX
   '0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e', // YFI
-  '0xdf5e0e81dff6faf3a7e52ba697820c5e32d806a8'  // yCurv
+  '0xdf5e0e81dff6faf3a7e52ba697820c5e32d806a8', // yCurv
+  '0x054d64b73d3d8a21af3d764efd76bcaa774f3bb2'  // PPAY
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
 let MINIMUM_USD_THRESHOLD_NEW_PAIRS = BigDecimal.fromString('400000')
 
 // minimum liquidity for price to get tracked
-let MINIMUM_LIQUIDITY_THRESHOLD_ETH = BigDecimal.fromString('2')
+let MINIMUM_LIQUIDITY_THRESHOLD_ETH = BigDecimal.fromString('0.1')
 
 /**
  * Search through graph to find derived Eth per token.
