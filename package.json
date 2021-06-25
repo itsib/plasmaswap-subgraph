@@ -6,10 +6,9 @@
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "create-local": "graph create itsib/plasmaswap --node http://127.0.0.1:8020",
-    "deploy-local": "graph deploy itsib/plasmaswap --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
-    "deploy": "graph deploy itsib/plasmaswap-v2 --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
-    "watch-local": "graph deploy itsib/plasmaswap --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+    "deploy": "graph deploy itsib/plasmaswap-v2 --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ subgraph.yaml",
+    "deploy:kovan": "graph deploy itsib/plasmaswap --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ subgraph.kovan.yaml",
+    "deploy:local": "graph deploy itsib/plasmaswap --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020 subgraph.kovan.yaml"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.16.0",
