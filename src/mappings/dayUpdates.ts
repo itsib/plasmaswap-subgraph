@@ -1,8 +1,8 @@
-import { PairHourData } from './../types/schema'
 /* eslint-disable prefer-const */
-import { BigInt, BigDecimal, EthereumEvent } from '@graphprotocol/graph-ts'
-import { Pair, Bundle, Token, PlasmaswapFactory, PlasmaswapDayData, PairDayData, TokenDayData } from '../types/schema'
-import { ONE_BI, ZERO_BD, ZERO_BI, FACTORY_ADDRESS } from './helpers'
+import {BigDecimal, BigInt, EthereumEvent} from '@graphprotocol/graph-ts'
+import {Bundle, Pair, PairDayData, PlasmaswapDayData, PlasmaswapFactory, Token, TokenDayData, PairHourData} from '../types/schema'
+import { FACTORY_ADDRESS } from './addresses';
+import {ONE_BI, ZERO_BD, ZERO_BI} from './helpers'
 
 export function updatePlasmaswapDayData(event: EthereumEvent): PlasmaswapDayData {
   let uniswap = PlasmaswapFactory.load(FACTORY_ADDRESS)

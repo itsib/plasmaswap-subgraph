@@ -6,9 +6,18 @@
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "deploy": "graph deploy itsib/plasmaswap-v2 --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ subgraph.yaml",
-    "deploy:kovan": "graph deploy itsib/plasmaswap --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ subgraph.kovan.yaml",
-    "deploy:local": "graph deploy itsib/plasmaswap --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020 subgraph.kovan.yaml"
+    "create:local": "graph create itsib/plasmaswap --node http://127.0.0.1:8020",
+
+    "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml && mustache config/mainnet.json addresses.mustache > src/mappings/addresses.ts",
+    "prepare:matic": "mustache config/matic.json subgraph.template.yaml > subgraph.yaml && mustache config/matic.json addresses.mustache > src/mappings/addresses.ts",
+    "prepare:bsc": "mustache config/bsc.json subgraph.template.yaml > subgraph.yaml && mustache config/bsc.json addresses.mustache > src/mappings/addresses.ts",
+    "prepare:kovan": "mustache config/kovan.json subgraph.template.yaml > subgraph.yaml && mustache config/kovan.json addresses.mustache > src/mappings/addresses.ts",
+
+    "deploy": "npm run prepare:mainnet && graph deploy itsib/plasmaswap-v2 --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy:matic": "npm run prepare:matic && graph deploy itsib/plasmaswap-poligon --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy:bsc": "npm run prepare:bsc && graph deploy itsib/plasmaswap-bsc --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy:kovan": "npm run prepare:kovan && graph deploy itsib/plasmaswap --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy:local": "npm run prepare:mainnet && graph deploy itsib/plasmaswap --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.16.0",
@@ -17,6 +26,7 @@
     "@typescript-eslint/parser": "^2.0.0",
     "eslint": "^6.2.2",
     "eslint-config-prettier": "^6.1.0",
+    "mustache": "^4.2.0",
     "prettier": "^1.18.2",
     "typescript": "^3.5.2"
   }

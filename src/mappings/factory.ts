@@ -3,8 +3,8 @@ import { log } from '@graphprotocol/graph-ts'
 import { PlasmaswapFactory, Pair, Token, Bundle } from '../types/schema'
 import { PairCreated } from '../types/Factory/Factory'
 import { Pair as PairTemplate } from '../types/templates'
+import { FACTORY_ADDRESS } from './addresses';
 import {
-  FACTORY_ADDRESS,
   ZERO_BD,
   ZERO_BI,
   fetchTokenSymbol,

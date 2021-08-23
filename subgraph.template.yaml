@@ -1,16 +1,16 @@
 specVersion: 0.0.2
-description: PlasmaSwap is a decentralized protocol for automated token exchange on Ethereum.
+description: {{description}}
 repository: https://github.com/itsib/plasmaswap-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: kovan
+    network: {{network}}
     source:
-      address: '0x7A6521ba7Ba45C908be726D719ACd547D4a8E246'
+      address: '{{factoryAddress}}'
       abi: Factory
-      startBlock: 22379351
+      startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.3
@@ -34,7 +34,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pair
-    network: kovan
+    network: {{network}}
     source:
       abi: Pair
     mapping:

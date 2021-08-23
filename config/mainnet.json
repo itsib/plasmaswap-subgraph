@@ -1,0 +1,29 @@
+{
+  "description": "PlasmaSwap is a decentralized protocol for automated token exchange on Ethereum.",
+  "factoryAddress": "0xd87Ad19db2c4cCbf897106dE034D52e3DD90ea60",
+  "network": "mainnet",
+  "startBlock": 11718233,
+  "wnativeAddress": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "whitelist": [
+    "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "0x0000000000085d4780b73119b644ae5ecd22b376",
+    "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
+    "0x39aa39c021dfbae8fac545936693ac917d5e7563",
+    "0x86fadb80d8d2cff3c3680819e4da99c10232ba0f",
+    "0x57ab1ec28d129707052df4df418d58a2d46d5f51",
+    "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+    "0xc00e94cb662c3520282e6f5717214004a7f26888",
+    "0x514910771af9ca656af840dff83e8264ecf986ca",
+    "0x960b236a07cf122663c4303350609a66a7b288c0",
+    "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+    "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e",
+    "0xdf5e0e81dff6faf3a7e52ba697820c5e32d806a8",
+    "0x054d64b73d3d8a21af3d764efd76bcaa774f3bb2"
+  ],
+  "usdcWnativePairAddress": "0x443270fd0765c7a4bc86fcb1c8b5c5d84be66057",
+  "daiWnativePairAddress": "0x0786f748b7d50983d4eddaae2e7bf6f03b794c79",
+  "usdtWnativePairAddress": "0x8d5ebb25d3af8d6df174cf48bf5b1fe8288318ae"
+}

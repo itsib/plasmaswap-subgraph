@@ -1,0 +1,15 @@
+{
+  "description": "PlasmaSwap is a decentralized protocol for automated token exchange on Kovan Testnet.",
+  "factoryAddress": "0x7A6521ba7Ba45C908be726D719ACd547D4a8E246",
+  "network": "kovan",
+  "startBlock": 22379351,
+  "wnativeAddress": "0xd0a1e359811322d97991e03f863a0c30c2cf029c",
+  "whitelist": [
+    "0xd0a1e359811322d97991e03f863a0c30c2cf029c",
+    "0x6eac80ad4a8fc514a5082ab52b254d91edbd0155",
+    "0x80593cc42d56ee7feffdb7b040aa7ee596accdea"
+  ],
+  "usdcWnativePairAddress": "0xc5a420d181059ac3af786aa8b195c36f0106f79e",
+  "daiWnativePairAddress": "0x80bc8215b30b6f77c1bb3beb78fc0c4a54b4733e",
+  "usdtWnativePairAddress": ""
+}

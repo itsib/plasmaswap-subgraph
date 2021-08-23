@@ -1,0 +1,18 @@
+export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
+
+export const FACTORY_ADDRESS = '{{factoryAddress}}'
+export const WNATIVE_ADDRESS = '{{wnativeAddress}}'
+
+export const USDC_WNATIVE_PAIR = '{{usdcWnativePairAddress}}'
+export const DAI_WNATIVE_PAIR = '{{daiWnativePairAddress}}'
+export const USDT_WNATIVE_PAIR = '{{usdtWnativePairAddress}}'
+
+/**
+* Token where amounts should contribute to tracked volume and liquidity
+* WETH, DAI, USDC, USDT, TUSD, cDAI, cUSDC, EBASE, sUSD, MKR, COMP, LINK, ANT, SNX, YFI, yCurv, PPAY
+*/
+export const WHITELIST: string[] = [
+{{#whitelist}}
+  '{{.}}',
+{{/whitelist}}
+]

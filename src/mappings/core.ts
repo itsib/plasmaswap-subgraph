@@ -1,28 +1,27 @@
 /* eslint-disable prefer-const */
-import { BigInt, BigDecimal, store, Address } from '@graphprotocol/graph-ts'
+import {Address, BigDecimal, BigInt, store} from '@graphprotocol/graph-ts'
 import {
-  Pair,
-  Token,
-  PlasmaswapFactory,
-  Transaction,
-  Mint as MintEvent,
+  Bundle,
   Burn as BurnEvent,
+  Mint as MintEvent,
+  Pair,
+  PlasmaswapFactory,
   Swap as SwapEvent,
-  Bundle
+  Token,
+  Transaction
 } from '../types/schema'
-import { Pair as PairContract, Mint, Burn, Swap, Transfer, Sync } from '../types/templates/Pair/Pair'
-import { updatePairDayData, updateTokenDayData, updatePlasmaswapDayData, updatePairHourData } from './dayUpdates'
-import { getEthPriceInUSD, findEthPerToken, getTrackedVolumeUSD, getTrackedLiquidityUSD } from './pricing'
+import {Burn, Mint, Pair as PairContract, Swap, Sync, Transfer} from '../types/templates/Pair/Pair'
+import { ADDRESS_ZERO, FACTORY_ADDRESS } from './addresses';
+import {updatePairDayData, updatePairHourData, updatePlasmaswapDayData, updateTokenDayData} from './dayUpdates'
+import {findEthPerToken, getEthPriceInUSD, getTrackedLiquidityUSD, getTrackedVolumeUSD} from './pricing'
 import {
-  convertTokenToDecimal,
-  ADDRESS_ZERO,
-  FACTORY_ADDRESS,
-  ONE_BI,
-  createUser,
-  createLiquidityPosition,
-  ZERO_BD,
   BI_18,
-  createLiquiditySnapshot
+  convertTokenToDecimal,
+  createLiquidityPosition,
+  createLiquiditySnapshot,
+  createUser,
+  ONE_BI,
+  ZERO_BD
 } from './helpers'
 
 let EXCLUDED_ADDRESS = '0xdd28c66668bde04bcc1f1f208b08b483639eb5d0'

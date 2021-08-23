@@ -1,13 +1,11 @@
 /* eslint-disable prefer-const */
-import { log, BigInt, BigDecimal, Address, EthereumEvent } from '@graphprotocol/graph-ts'
+import { log, BigInt, BigDecimal, Address, EthereumEvent, dataSource } from '@graphprotocol/graph-ts'
 import { ERC20 } from '../types/Factory/ERC20'
 import { ERC20SymbolBytes } from '../types/Factory/ERC20SymbolBytes'
 import { ERC20NameBytes } from '../types/Factory/ERC20NameBytes'
 import { User, Bundle, Token, LiquidityPosition, LiquidityPositionSnapshot, Pair } from '../types/schema'
 import { Factory as FactoryContract } from '../types/templates/Pair/Factory'
-
-export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
-export const FACTORY_ADDRESS = '0xd87Ad19db2c4cCbf897106dE034D52e3DD90ea60'
+import { FACTORY_ADDRESS } from './addresses';
 
 export let ZERO_BI = BigInt.fromI32(0)
 export let ONE_BI = BigInt.fromI32(1)
@@ -155,7 +153,9 @@ export function createLiquidityPosition(exchange: Address, user: Address): Liqui
     liquidityTokenBalance.save()
     pair.save()
   }
-  if (liquidityTokenBalance === null) log.error('LiquidityTokenBalance is null', [id])
+  if (liquidityTokenBalance === null) {
+    log.error('LiquidityTokenBalance is null', [id])
+  }
   return liquidityTokenBalance as LiquidityPosition
 }
 
