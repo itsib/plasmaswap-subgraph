@@ -2,7 +2,7 @@
   "description": "PlasmaSwap is a decentralized protocol for automated token exchange on BSC.",
   "factoryAddress": "0x0a0f1abd7ec4c2abf92f8e33382fa77863154628",
   "network": "bsc",
-  "startBlock": 10276490,
+  "startBlock": 10276480,
   "wnativeAddress": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
   "whitelist": [
     "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
