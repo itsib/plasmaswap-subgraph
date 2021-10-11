@@ -1,5 +1,5 @@
 {
-  "description": "PlasmaSwap is a decentralized protocol for automated token exchange on Poligon Matic.",
+  "description": "PlasmaSwap is a decentralized protocol for automated token exchange on Polygon Matic.",
   "factoryAddress": "0x745c475CC101cA5580eFf6F723976480881BC008",
   "network": "matic",
   "startBlock": 15441546,
