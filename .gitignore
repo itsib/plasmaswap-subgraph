@@ -3,6 +3,7 @@ node_modules/
 src/types/
 .DS_STORE
 .idea
+.vscode
 
 subgraph.yaml
 src/mappings/addresses.ts
